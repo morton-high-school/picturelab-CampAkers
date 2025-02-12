@@ -6,6 +6,19 @@ public class IntArrayWorker
   /** set the matrix to the passed one
     * @param theMatrix the one to use
     */
+  public int getCount(int[][]array, int number){
+    int count=0;
+    for(int i =0; i<array.length;i++){
+      for(int j=0; j<array[i].length;j++){
+        if(matrix[i][j]==number){
+          count++;
+        }
+      }
+    }
+    return count;
+  }
+  
+  
   public void setMatrix(int[][] theMatrix)
   {
     matrix = theMatrix;

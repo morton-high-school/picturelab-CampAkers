@@ -121,7 +121,7 @@ public class Picture extends SimplePicture
     }
   }
 
-  public void grayScale(){
+  public void grayscale(){
     int sum;
     Pixel[][] pixels=this.getPixels2D();
     for(Pixel[] rowArray:pixels){
@@ -180,7 +180,7 @@ public class Picture extends SimplePicture
       }
     } 
   }
-  public void mirrorVerticalRTL()
+  public void mirrorVerticalRightToLeft()
   {
     Pixel[][] pixels = this.getPixels2D();
     Pixel leftPixel = null;
@@ -248,7 +248,7 @@ public class Picture extends SimplePicture
     } 
   }
 
-  public void mirrorHorizontalBTT()
+  public void mirrorHorizontalBotToTop()
   {
     Pixel[][] pixels = this.getPixels2D();
     Pixel topPixel = null;

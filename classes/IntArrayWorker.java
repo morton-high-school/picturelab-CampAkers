@@ -6,11 +6,35 @@ public class IntArrayWorker
   /** set the matrix to the passed one
     * @param theMatrix the one to use
     */
-  public int getCount(int[][]array, int number){
+  
+  public int getColTotal(int[][]array, int col){
+    int sum=0;
+    for(int i =0; i<array.length;i++){
+      for(int j=col; j<col+1;j++){
+          sum+=array[i][j];
+      }
+    }
+    return sum;
+  }
+  
+  public  int getLargest(int[][]array){
+    int largest=0;
+    for(int i =0; i<array.length;i++){
+      for(int j=0; j<array[i].length;j++){
+        if(array[i][j]>largest){
+          largest=array[i][j];
+        }
+      }
+    }
+    return largest;
+  }
+  
+  public int getCount(int number){
+    int[][]array=matrix;
     int count=0;
     for(int i =0; i<array.length;i++){
       for(int j=0; j<array[i].length;j++){
-        if(matrix[i][j]==number){
+        if(array[i][j]==number){
           count++;
         }
       }

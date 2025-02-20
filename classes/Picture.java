@@ -164,24 +164,25 @@ public class Picture extends SimplePicture
     } 
   }
 
-  public void mirrorDiagonal()
+  public void mirrorDiagonal1()
   {
     Pixel[][] pixels = this.getPixels2D();
     Pixel leftPixel = null;
     Pixel rightPixel = null;
     int width = pixels[0].length;
-    for (int row = 0; row < pixels.length; row++)
+    int count=0;
+    for (int row = 0; row < pixels.length-1; row++)
     {
-      for (int col = 0; col < width / 2; col++)
+      for (int col = 0; col <count; col++)
       {
         leftPixel = pixels[row][col];
-        rightPixel = pixels[pixels.length-row][width - 1 - col];
+        rightPixel = pixels[pixels.length-1-row][width - 1 - col];
         rightPixel.setColor(leftPixel.getColor());
       }
     } 
   }
 
-  public void mirrorDiagonal1()
+  public void mirrorDiagonal()
   {
     Pixel[][] pixels = this.getPixels2D();
     Pixel leftPixel = null;
@@ -193,10 +194,10 @@ public class Picture extends SimplePicture
       for (int col = 0; col < count && count<width; col++)
       {
         leftPixel = pixels[row][col];
-        rightPixel = pixels[pixels.length-row][width - 1 - col];
+        rightPixel = pixels[row][width - 1 - col];
         rightPixel.setColor(leftPixel.getColor());
-        count++;
       }
+      count++;
     } 
   }
 

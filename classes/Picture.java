@@ -164,32 +164,33 @@ public class Picture extends SimplePicture
     } 
   }
 
-  public void mirrorDiagonal1()
-  {
-    Pixel[][] pixels = this.getPixels2D();
-    Pixel leftPixel = null;
-    Pixel rightPixel = null;
-    int width = pixels[0].length;
-    int count=0;
-    for (int row = 0; row < pixels.length-1; row++)
-    {
-      for (int col = 0; col <count; col++)
-      {
-        leftPixel = pixels[row][col];
-        rightPixel = pixels[pixels.length-1-row][width - 1 - col];
-        rightPixel.setColor(leftPixel.getColor());
-      }
-    } 
-  }
-
   public void mirrorDiagonal()
   {
     Pixel[][] pixels = this.getPixels2D();
     Pixel leftPixel = null;
     Pixel rightPixel = null;
-    int count=0;
     int width = pixels[0].length;
-    for (int row = 0; row < pixels.length; row++)
+    int count=0;
+    for (int row = 0; row < 479; row++)
+    {
+      for (int col = 0; col <479; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[479-col][479-row];
+        rightPixel.setColor(leftPixel.getColor());
+      }
+    } 
+  }
+
+  public void mirrorDiagonal1()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int count=0;
+    int k=1;
+    int width = pixels[0].length;
+    for (int row = 0; row < pixels.length&&row<k; row++)
     {
       for (int col = 0; col < count && count<width; col++)
       {
@@ -198,6 +199,7 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
       count++;
+      k++;
     } 
   }
 

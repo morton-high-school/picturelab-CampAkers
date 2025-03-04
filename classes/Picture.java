@@ -171,9 +171,9 @@ public class Picture extends SimplePicture
     Pixel rightPixel = null;
     int width = pixels[0].length;
     int count=0;
-    for (int row = 0; row < 479; row++)
+    for (int row = 0; row < 299; row++)
     {
-      for (int col = 0; col <479; col++)
+      for (int col = 0; col <299; col++)
       {
         leftPixel = pixels[row][col];
         rightPixel = pixels[299-col][299-row];

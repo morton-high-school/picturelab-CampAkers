@@ -74,10 +74,10 @@ public class PictureTester
   }
   public static void testMirrorDiagonal()
   {
-    Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.mirrorDiagonal();
-    beach.explore();
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorDiagonal();
+    snowman.explore();
   }
   
   /** Method to test mirrorTemple */
